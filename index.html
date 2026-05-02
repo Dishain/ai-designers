@@ -860,6 +860,82 @@ p { margin-bottom: 12px; }
   color: var(--red);
 }
 
+/* ═══════════════ REVIEWS BENTO ═══════════════ */
+.reviews-bento {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.review-card {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.review-card:hover {
+  border-color: var(--border-light);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+.review-card .review-quote {
+  font-size: 14px;
+  color: var(--text-2);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.review-card.is-hero { grid-column: span 4; grid-row: span 2; padding: 32px; }
+.review-card.is-hero .review-quote {
+  font-size: 16px;
+  color: var(--text-1);
+  line-height: 1.6;
+}
+
+.review-card.is-narrow { grid-column: span 2; }
+.review-card.is-wide-4 { grid-column: span 4; }
+.review-card.is-wide-2 { grid-column: span 2; }
+.review-card.is-full { grid-column: span 6; }
+
+.review-meta {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-3);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.review-link-disabled {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-3);
+  user-select: none;
+  word-break: break-all;
+  display: inline-block;
+  cursor: default;
+}
+
+@media (max-width: 768px) {
+  .reviews-bento { grid-template-columns: 1fr; }
+  .review-card.is-hero,
+  .review-card.is-narrow,
+  .review-card.is-wide-4,
+  .review-card.is-wide-2,
+  .review-card.is-full {
+    grid-column: span 1;
+    grid-row: auto;
+  }
+  .review-card.is-hero { padding: 24px; }
+}
+
 /* ═══════════════ PRICING ═══════════════ */
 .pricing-card {
   max-width: 440px;
@@ -1398,6 +1474,59 @@ p { margin-bottom: 12px; }
           <li>Тим, хто хоче навчитись програмувати (це не курс програмування)</li>
           <li>Тим, хто очікує «магічну кнопку» — потрібно буде повторювати і практикуватись</li>
         </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ ВІДГУКИ ═══════════════ -->
+<section class="section">
+  <div class="container">
+    <h2 class="text-center split-text reveal" data-split>Перші відгуки</h2>
+    <div class="reviews-bento reveal">
+      <!-- 1. Hero — Claude/ChatGPT -->
+      <div class="review-card is-hero">
+        <p class="review-quote">
+          Привіт! Дякую за курс — мені дуже зайшов 👍<br><br>
+          За тиждень реально багато нового для себе взяв. Почав активно юзати Claude, до цього більше сидів на ChatGPT. Зараз взагалі працюю в зв'язці: ChatGPT для обговорення і промптів, а Claude — для генерації та реалізації, і це прям кайф.
+        </p>
+        <span class="review-meta">— Учасник практикуму</span>
+      </div>
+
+      <!-- 2. Mark — кейс з обрізаним посиланням -->
+      <div class="review-card is-narrow">
+        <p class="review-quote">
+          Привіт, трохи для контексту: я джун, щойно закінчив курси. Сьогодні робив перенесення дизайну в код. Ось що в мене вийшло:
+        </p>
+        <span class="review-link-disabled">🔗 markuxuiport...</span>
+      </div>
+
+      <!-- 3. Two formats (з матюком) -->
+      <div class="review-card is-narrow">
+        <p class="review-quote">
+          Я проходжу одразу два курси, і це взагалі різні формати. Діма дуже ах**нно пояснює як все підключити і як налаштувати простори, систему якось зробити.
+        </p>
+      </div>
+
+      <!-- 4. Presence + persona (combined 3+4) -->
+      <div class="review-card is-wide-4">
+        <p class="review-quote">
+          Дуже класно, коли є оце відчуття присутності навіть у записах. Якась така персональна фішка — ще ніби ближче знайомить студента з тобою, бо ти показуєш якийсь власний вибір поза темою.
+        </p>
+      </div>
+
+      <!-- 5. Edge cases -->
+      <div class="review-card is-wide-2">
+        <p class="review-quote">
+          Дякую, що все по порядку, структурно і з едж-кейсами. Є відчуття, ніби я не сам на сам з цим всім.
+        </p>
+      </div>
+
+      <!-- 6. "Курс топ" -->
+      <div class="review-card is-full">
+        <p class="review-quote">
+          Курс топ. Все дуже чітко й зрозуміло. Без води — найголовніше. Чекаю на інші курси. Так тримати 👏
+        </p>
       </div>
     </div>
   </div>
