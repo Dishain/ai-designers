@@ -333,6 +333,150 @@ p { margin-bottom: 12px; color: var(--ink-2); }
 /* ═══════════════ PRICING ═══════════════ */
 .price { font-size: 52px; font-weight: 700; color: var(--ink); margin: 16px 0; letter-spacing: -0.03em; }
 
+/* Pricing card — ShainBox-style: gradient "aura" panel + feature list.
+   Ported from shain.one/shainbox, mapped onto this site's tokens. */
+.price-block {
+  position: relative;
+  border: 1px solid var(--hairline);
+  background: var(--surface);
+  border-radius: 28px;
+  box-shadow: var(--sh-lg);
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  overflow: hidden;
+  isolation: isolate;
+  max-width: 920px;
+  margin: 32px auto 0;
+  text-align: left;
+}
+/* Left: gradient aura panel (price + CTA). Aura is inset ~4px on top/left/bottom
+   so a thin white frame shows, and fades to the right into the feature column. */
+.price-left {
+  position: relative;
+  padding: 48px 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.price-aura {
+  position: absolute;
+  top: 4px; left: 4px; bottom: 4px; right: 0;
+  border-radius: 22px 0 0 22px;
+  background:
+    radial-gradient(70% 50% at 26% 6%, rgba(122, 150, 255, 0.55), transparent 60%),
+    radial-gradient(78% 56% at 34% 50%, rgba(255, 193, 120, 0.62), transparent 62%),
+    radial-gradient(66% 48% at 30% 72%, rgba(255, 138, 158, 0.45), transparent 66%);
+  background-size: 160% 160%;
+  background-repeat: no-repeat;
+  -webkit-mask-image: linear-gradient(90deg, #000 58%, transparent 100%);
+          mask-image: linear-gradient(90deg, #000 58%, transparent 100%);
+  z-index: 0;
+  pointer-events: none;
+  animation: auraDrift 12s ease-in-out infinite alternate;
+  will-change: background-position, filter;
+}
+@keyframes auraDrift {
+  0%   { background-position:  8%   0%; filter: hue-rotate(-6deg) saturate(104%); }
+  100% { background-position: 92% 100%; filter: hue-rotate(10deg) saturate(116%); }
+}
+.price-left > :not(.price-aura) { position: relative; z-index: 1; }
+.price-tag {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+.price-num {
+  font-size: clamp(56px, 6.5vw, 84px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  line-height: 0.92;
+  margin: 0 0 10px;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 12px;
+}
+.price-num .cents {
+  color: var(--muted);
+  font-size: 0.22em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.price-sub {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink-2);
+  margin: 0 0 28px;
+  max-width: 320px;
+}
+.price-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  height: 60px;
+  background: #0A0A0A;
+  color: #FAFAF8;
+  border-radius: 16px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+  transition: transform 0.2s cubic-bezier(.2,.7,.2,1), box-shadow 0.2s cubic-bezier(.2,.7,.2,1);
+}
+.price-cta:hover { transform: translateY(-1px); box-shadow: 0 14px 32px rgba(0, 0, 0, 0.26); }
+.price-cta:active { transform: scale(0.99); }
+.price-foot {
+  margin-top: 16px;
+  align-self: center;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+/* Right: feature list on white */
+.price-right {
+  padding: 44px 44px 44px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.price-list { list-style: none; padding: 0; margin: 0; }
+.price-list li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--hairline);
+  font-size: 15px;
+  color: var(--ink);
+}
+.price-list li:last-child { border-bottom: 0; }
+.price-list li .bul {
+  width: 6px; height: 6px;
+  border-radius: 999px;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+@media (max-width: 768px) {
+  .price-block { grid-template-columns: 1fr; }
+  .price-left { padding: 36px 28px; }
+  .price-right { padding: 8px 28px 36px; }
+  .price-aura {
+    top: 4px; left: 4px; right: 4px; bottom: auto; height: 62%;
+    border-radius: 22px 22px 0 0;
+    -webkit-mask-image: linear-gradient(180deg, #000 58%, transparent 100%);
+            mask-image: linear-gradient(180deg, #000 58%, transparent 100%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .price-aura { animation: none; }
+}
+
 /* ═══════════════ FAQ ═══════════════ */
 .faq-item { border-bottom: 1px solid var(--hairline); cursor: pointer; }
 .faq-item:last-child { border: none; }
@@ -714,21 +858,25 @@ p { margin-bottom: 12px; color: var(--ink-2); }
 <section class="section" id="pricing">
   <div class="container text-center">
     <h2 class="split-text reveal" data-split>Одна ціна. Доступ назавжди.</h2>
-    <div class="electric-border-wrap reveal" style="max-width: 440px; margin: 32px auto 0;">
-      <div class="electric-inner" style="padding: 40px; text-align: center;">
-        <h3 style="font-size: 18px; margin-bottom: 8px;">AI for Designers — Практикум</h3>
-        <div class="price">$49</div>
-        <ul class="pricing-list" style="list-style: none; text-align: left; margin: 20px 0;">
-          <li>15+ відеоуроків (4+ години)</li>
-          <li>Реальні воркфлоу з лайв-демо</li>
-          <li>Супровідні текстові матеріали до кожного уроку</li>
-          <li>Промпти, шаблони, чек-листи</li>
-          <li>Набір Claude Skills для дизайнерів</li>
-          <li>Lifetime access + усі оновлення та нові уроки</li>
-          <li>Можливість задати питання автору особисто</li>
+    <div class="price-block reveal">
+      <div class="price-left">
+        <div class="price-aura" aria-hidden="true"></div>
+        <div class="price-tag">Повний доступ</div>
+        <div class="price-num">$49<span class="cents">одноразово</span></div>
+        <div class="price-sub">Назавжди твоє. Усі майбутні оновлення та нові уроки включено.</div>
+        <a href="https://payhip.com/buy?link=efnEH" target="_blank" class="price-cta cursor-target">Отримати доступ</a>
+        <div class="price-foot">Lifetime access · доступ одразу після оплати</div>
+      </div>
+      <div class="price-right">
+        <ul class="price-list">
+          <li><span class="bul" aria-hidden="true"></span><span>15+ відеоуроків (4+ години)</span></li>
+          <li><span class="bul" aria-hidden="true"></span><span>Реальні воркфлоу з лайв-демо</span></li>
+          <li><span class="bul" aria-hidden="true"></span><span>Супровідні текстові матеріали до кожного уроку</span></li>
+          <li><span class="bul" aria-hidden="true"></span><span>Промпти, шаблони, чек-листи</span></li>
+          <li><span class="bul" aria-hidden="true"></span><span>Набір Claude Skills для дизайнерів</span></li>
+          <li><span class="bul" aria-hidden="true"></span><span>Lifetime access + усі оновлення та нові уроки</span></li>
+          <li><span class="bul" aria-hidden="true"></span><span>Можливість задати питання автору особисто</span></li>
         </ul>
-        <a href="https://payhip.com/buy?link=efnEH" target="_blank" class="cta" style="display:flex;width:100%;text-align:center;">Отримати доступ — $49</a>
-        <p class="subtext" style="margin-top: 12px;">Lifetime access · Доступ одразу після оплати</p>
       </div>
     </div>
   </div>
