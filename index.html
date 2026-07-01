@@ -207,9 +207,16 @@ p { margin-bottom: 12px; color: var(--ink-2); }
 .hero-text p { font-size: 17px; color: var(--ink-2); max-width: 520px; margin: 0 0 28px; line-height: 1.6; }
 .hero-text .cta { margin-bottom: 12px; }
 .hero-text .badges { justify-content: flex-start; }
-.hero-media { position: relative; }
-.hero-media img {
-  display: block; width: 100%; max-width: 460px; height: auto; margin-left: auto;
+.hero-media { position: relative; display: flex; justify-content: flex-end; }
+.hero-media-frame { position: relative; width: 100%; max-width: 460px; }
+.hero-media-frame img { display: block; width: 100%; height: auto; }
+/* Label chip sits centered on the image's bottom edge (~half overlapping
+   onto the image) so it covers the slightly-cropped element there */
+.hero-label {
+  position: absolute; left: 50%; bottom: 0; transform: translate(-50%, 50%);
+  z-index: 3; margin: 0; white-space: nowrap;
+  background: var(--surface); border: 1px solid var(--hairline);
+  box-shadow: var(--sh-md);
 }
 @media (max-width: 900px) {
   .hero { min-height: 0; padding: 64px 0 32px; }
@@ -217,7 +224,8 @@ p { margin-bottom: 12px; color: var(--ink-2); }
   .hero-text { text-align: center; }
   .hero-text p { margin-left: auto; margin-right: auto; }
   .hero-text .badges { justify-content: center; }
-  .hero-media img { margin: 0 auto; max-width: 320px; }
+  .hero-media { justify-content: center; }
+  .hero-media-frame { max-width: 320px; }
 }
 
 /* Split text animation (gentle) */
@@ -594,8 +602,7 @@ p { margin-bottom: 12px; color: var(--ink-2); }
 <section class="hero">
   <div class="container hero-inner">
     <div class="hero-text">
-      <div class="label">Практикум для дизайнерів</div>
-      <h1 class="split-text" data-split>Навчись використовувати AI у щоденній роботі дизайнера</h1>
+      <h1 class="split-text" data-split>Навчись<br>використовувати AI<br>у щоденній роботі<br>дизайнера</h1>
       <p>Реальні воркфлоу, які я використовую на основній роботі. Від налаштування інструментів до свого продукту — без навичок програмування.</p>
       <a href="https://payhip.com/buy?link=efnEH" target="_blank" class="cta cursor-target">Отримати доступ — $49</a>
       <p class="subtext">Доступ до матеріалів та всіх оновлень — назавжди.</p>
@@ -606,10 +613,13 @@ p { margin-bottom: 12px; color: var(--ink-2); }
       </div>
     </div>
     <div class="hero-media">
-      <picture>
-        <source srcset="Images/hero.webp" type="image/webp" />
-        <img src="Images/hero.png" alt="Рука тримає AI-інструменти дизайнера: Figma, Claude AI, Gemini AI, ChatGPT" />
-      </picture>
+      <div class="hero-media-frame">
+        <picture>
+          <source srcset="Images/hero.webp" type="image/webp" />
+          <img src="Images/hero.png" alt="Рука тримає AI-інструменти дизайнера: Figma, Claude AI, Gemini AI, ChatGPT" />
+        </picture>
+        <div class="label hero-label">Практикум для дизайнерів</div>
+      </div>
     </div>
   </div>
 </section>
