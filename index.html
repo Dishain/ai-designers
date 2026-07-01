@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI for Designers — Практикум з AI-інструментів для дизайнерів</title>
+<title>AI for Designers - Практикум з AI-інструментів для дизайнерів</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
 <!-- SEO Meta Tags -->
@@ -16,8 +16,8 @@
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://dishain.github.io/ai-designers/">
-<meta property="og:title" content="AI for Designers — Практикум з AI-інструментів для дизайнерів">
-<meta property="og:description" content="Практичний курс з AI-інструментів для UI/UX дизайнерів. Claude, Figma MCP, реальні воркфлоу. Lifetime access — $49.">
+<meta property="og:title" content="AI for Designers - Практикум з AI-інструментів для дизайнерів">
+<meta property="og:description" content="Практичний курс з AI-інструментів для UI/UX дизайнерів. Claude, Figma MCP, реальні воркфлоу. Lifetime access - $49.">
 <meta property="og:image" content="https://dishain.github.io/ai-designers/Images/photo.jpeg">
 <meta property="og:locale" content="uk_UA">
 <meta property="og:site_name" content="AI for Designers">
@@ -25,7 +25,7 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://dishain.github.io/ai-designers/">
-<meta name="twitter:title" content="AI for Designers — Практикум для дизайнерів">
+<meta name="twitter:title" content="AI for Designers - Практикум для дизайнерів">
 <meta name="twitter:description" content="Практичний курс з AI-інструментів для UI/UX дизайнерів. Реальні воркфлоу, Lifetime access.">
 <meta name="twitter:image" content="https://dishain.github.io/ai-designers/Images/photo.jpeg">
 
@@ -34,7 +34,7 @@
 {
   "@context": "https://schema.org",
   "@type": "Course",
-  "name": "AI for Designers — Практикум",
+  "name": "AI for Designers - Практикум",
   "description": "Практичний курс з AI-інструментів для дизайнерів. 15+ відеоуроків, 4+ години практики, реальні воркфлоу з Claude, Figma MCP, Claude Code. Від дизайнера для дизайнерів.",
   "provider": {
     "@type": "Person",
@@ -213,7 +213,7 @@ p { margin-bottom: 12px; color: var(--ink-2); }
 /* Label chip sits centered on the image's bottom edge (~half overlapping
    onto the image) so it covers the slightly-cropped element there */
 .hero-label {
-  position: absolute; left: 50%; bottom: 0; transform: translate(-50%, 50%);
+  position: absolute; left: 50%; bottom: 0; transform: translate(calc(-50% + 16px), 50%);
   z-index: 3; margin: 0; white-space: nowrap;
   background: var(--surface); border: 1px solid var(--hairline);
   box-shadow: var(--sh-md);
@@ -243,7 +243,7 @@ p { margin-bottom: 12px; color: var(--ink-2); }
 .advantage-text h3 { font-size: 16px; margin-bottom: 4px; }
 .advantage-text p { font-size: 14px; margin: 0; color: var(--ink-2); }
 
-/* ═══════════════ COMPARISON — plan-card style ═══════════════ */
+/* ═══════════════ COMPARISON - plan-card style ═══════════════ */
 .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; align-items: stretch; }
 @media (max-width: 768px) { .compare { grid-template-columns: 1fr; } }
 .compare-col {
@@ -265,18 +265,18 @@ p { margin-bottom: 12px; color: var(--ink-2); }
   width: 18px; text-align: center;
   font-size: 15px; font-weight: 700;
 }
-/* Dim card — "other courses": muted, grey ✕ markers, low elevation */
+/* Dim card - "other courses": muted, grey ✕ markers, low elevation */
 .compare-dim { box-shadow: none; }
 .compare-dim h3 { color: var(--muted); }
 .compare-dim li { color: var(--ink-2); }
 .compare-dim li::before { content: "✕"; color: var(--faint); font-weight: 600; }
-/* Highlighted card — this practicum: raised, green ✓ markers.
+/* Highlighted card - this practicum: raised, green ✓ markers.
    The gradient lives on the CARD's bottom-right corner (a glowing ring +
    a soft inner bloom). The footer block sits inside as a plain white panel,
    leaving a small gap through which the card's corner gradient shows. */
 .compare-hl { box-shadow: var(--sh-lg); position: relative; }
 .compare-hl li::before { content: "✓"; color: var(--green); }
-/* Gradient ring — vivid at the bottom-right corner, fading out elsewhere */
+/* Gradient ring - vivid at the bottom-right corner, fading out elsewhere */
 .compare-hl::before {
   content: ""; position: absolute; inset: 0; border-radius: 24px; padding: 2px;
   background: radial-gradient(150% 150% at 100% 100%,
@@ -302,12 +302,12 @@ p { margin-bottom: 12px; color: var(--ink-2); }
 }
 .compare-hl > * { position: relative; z-index: 1; }
 
-/* Footer action panel — pulled toward the card edges so only a small (~8px)
+/* Footer action panel - pulled toward the card edges so only a small (~8px)
    gap remains, through which the highlighted card's corner gradient shows */
 .compare-foot { margin: 28px -24px -28px; }
 .compare-panel { border-radius: 16px; padding: 18px; }
 .compare-panel--plain { background: var(--surface-2); }
-/* Plain white block with a thin contour — sits inset so the card's
+/* Plain white block with a thin contour - sits inset so the card's
    corner gradient peeks out in the ~gap around it */
 .compare-panel--grad {
   background: var(--surface);
@@ -398,11 +398,13 @@ p { margin-bottom: 12px; color: var(--ink-2); }
 
 /* ═══════════════ REVIEWS BENTO ═══════════════ */
 .reviews-bento { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; margin-top: 32px; }
-.review-card { background: var(--surface); border: 1px solid var(--hairline); border-radius: 20px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; gap: 12px; box-shadow: var(--sh-sm); transition: transform 0.25s, box-shadow 0.25s; }
+.review-card { background: var(--surface); border: 1px solid var(--hairline); border-radius: 20px; padding: 24px; display: flex; flex-direction: column; justify-content: flex-start; gap: 12px; box-shadow: var(--sh-sm); transition: transform 0.25s, box-shadow 0.25s; }
 .review-card:hover { transform: translateY(-3px); box-shadow: var(--sh-md); }
 .review-card .review-quote { font-size: 14px; color: var(--ink-2); line-height: 1.65; margin: 0; }
-.review-card.is-hero { grid-column: span 4; grid-row: span 2; padding: 32px; background: var(--accent-soft); border-color: transparent; }
-.review-card.is-hero .review-quote { font-size: 16px; color: var(--ink); line-height: 1.6; }
+.review-card .review-quote a { color: var(--accent); font-weight: 600; text-decoration: none; }
+.review-card .review-quote a:hover { text-decoration: underline; }
+.review-card.is-hero { grid-column: span 4; grid-row: span 3; padding: 32px; background: var(--accent-soft); border-color: transparent; min-height: 0; max-height: 560px; overflow-y: auto; }
+.review-card.is-hero .review-quote { font-size: 15px; color: var(--ink); line-height: 1.6; }
 .review-card.is-narrow { grid-column: span 2; }
 .review-card.is-wide-4 { grid-column: span 4; }
 .review-card.is-wide-2 { grid-column: span 2; }
@@ -412,13 +414,13 @@ p { margin-bottom: 12px; color: var(--ink-2); }
 @media (max-width: 768px) {
   .reviews-bento { grid-template-columns: 1fr; }
   .review-card.is-hero, .review-card.is-narrow, .review-card.is-wide-4, .review-card.is-wide-2, .review-card.is-full { grid-column: span 1; grid-row: auto; }
-  .review-card.is-hero { padding: 24px; }
+  .review-card.is-hero { padding: 24px; max-height: none; overflow: visible; }
 }
 
 /* ═══════════════ PRICING ═══════════════ */
 .price { font-size: 52px; font-weight: 700; color: var(--ink); margin: 16px 0; letter-spacing: -0.03em; }
 
-/* Pricing card — ShainBox-style: gradient "aura" panel + feature list.
+/* Pricing card - ShainBox-style: gradient "aura" panel + feature list.
    Ported from shain.one/shainbox, mapped onto this site's tokens. */
 .price-block {
   position: relative;
@@ -603,9 +605,8 @@ p { margin-bottom: 12px; color: var(--ink-2); }
   <div class="container hero-inner">
     <div class="hero-text">
       <h1 class="split-text" data-split>Навчись<br>використовувати AI<br>у щоденній роботі<br>дизайнера</h1>
-      <p>Реальні воркфлоу, які я використовую на основній роботі. Від налаштування інструментів до свого продукту — без навичок програмування.</p>
-      <a href="https://payhip.com/buy?link=efnEH" target="_blank" class="cta cursor-target">Отримати доступ — $49</a>
-      <p class="subtext">Доступ до матеріалів та всіх оновлень — назавжди.</p>
+      <p>Реальні воркфлоу, які я використовую на основній роботі. Від налаштування інструментів до свого продукту - без навичок програмування.</p>
+      <a href="https://payhip.com/buy?link=efnEH" target="_blank" class="cta cursor-target">Отримати доступ - $49</a>
       <div class="badges">
         <span class="badge">Записані відеоуроки</span>
         <span class="badge">4+ години практики</span>
@@ -630,16 +631,38 @@ p { margin-bottom: 12px; color: var(--ink-2); }
     <h2 class="text-center split-text reveal" data-split>Знайоме?</h2>
     <div class="card-grid card-grid--3 reveal">
       <div class="card cursor-target">
-        <h3>«AI — це для розробників, не для мене»</h3>
-        <p>Ти бачиш, як колеги використовують AI, але не розумієш, з чого почати. Інструментів багато, гайдів ще більше — а конкретних дизайнерських воркфлоу немає.</p>
+        <h3>У вакансіях вимагають досвід з AI</h3>
+        <p>Компанії шукають дизайнерів, які вміють використовувати AI у роботі. Це вже впливає на зарплати і пропозиції.</p>
       </div>
       <div class="card cursor-target">
-        <h3>«Пробував, не працює»</h3>
-        <p>Писав промпти в ChatGPT, отримував щось. Але від «щось» до робочого результату — прірва. Не вистачає системного підходу.</p>
+        <h3>«AI - це для розробників, не для мене»</h3>
+        <p>Ти бачиш, як колеги використовують AI, але не розумієш, з чого почати. Інструментів багато, гайдів ще більше - а конкретних дизайнерських воркфлоу немає.</p>
       </div>
       <div class="card cursor-target">
-        <h3>«Дизайнери без AI коштують дешевше»</h3>
-        <p>Компанії шукають дизайнерів, які вміють з AI. Не «цікавляться», а реально використовують у роботі. Це вже впливає на зарплати і пропозиції.</p>
+        <h3>«Не вистачає системного підходу.»</h3>
+        <p>Писав промпти, отримував щось. Але від «щось» до робочого результату - не дійшло.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ ПРО АВТОРА ═══════════════ -->
+<section class="section">
+  <div class="container">
+    <h2 class="split-text reveal" data-split>Хто веде практикум</h2>
+    <div class="author reveal">
+      <div class="author-photo cursor-target"><img src="Images/photo.jpeg" alt="Дмитро" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>
+      <div class="author-info">
+        <h3>Дмитро</h3>
+        <div class="author-title">Senior Designer · 7+ років у продуктовому дизайні</div>
+        <p><strong>Більше 5 років працюю в американському фінтех-продукті</strong>, де виріс від дизайнера до лід-дизайнера. Паралельно - Ukrzoloto та Zlato, одна з найбільших мереж ювелірних магазинів в Україні.</p>
+        <p>Більше року <strong>щодня використовую</strong> Claude Code, Cowork, Figma AI та інші AI-інструменти. Дизайню у Figma з AI, роблю дизайн у коді - веб, десктоп, мобільні додатки.</p>
+        <p><strong>Веду Telegram-канал для дизайнерів 6+ років. 1600+ підписників.</strong></p>
+        <div class="author-links">
+          <a href="https://t.me/+sF22AC-NQ6wxMjU6" target="_blank" class="author-link cursor-target">Telegram-канал</a>
+          <a href="https://www.linkedin.com/in/dmytro-shain/" target="_blank" class="author-link cursor-target">LinkedIn</a>
+          <a href="mailto:web.shain@gmail.com" class="author-link cursor-target">Email</a>
+        </div>
       </div>
     </div>
   </div>
@@ -649,14 +672,14 @@ p { margin-bottom: 12px; color: var(--ink-2); }
 <section class="section">
   <div class="container">
     <h2 class="split-text reveal" data-split>Практикум, побудований на реальній роботі</h2>
-    <p class="reveal">Це не огляд інструментів і не теорія промптингу. Кожне відео — конкретний сценарій з лайв-демо: ти бачиш мій екран, мої промпти, мої помилки і як я їх виправляю.</p>
-    <p class="reveal">Матеріали йдуть по наростаючій: спочатку налаштовуємо інструменти, потім працюємо з AI і Figma разом, далі — створюємо повноцінні продукти в коді.</p>
+    <p class="reveal">Кожне відео - конкретний сценарій з лайв-демо: ти бачиш мій екран, мої промпти, мої помилки і як я їх виправляю.</p>
+    <p class="reveal">Уроки йдуть по наростаючій: спочатку налаштовуємо інструменти, потім працюємо з AI та Figma разом, далі - створюємо повноцінні продукти в коді. ⚡</p>
     <div class="advantages reveal">
       <div class="advantage">
         <div class="advantage-icon">⚡</div>
         <div class="advantage-text">
           <h3>Практика, а не теорія</h3>
-          <p>Кожен урок — лайв-демо на екрані. Ти повторюєш за мною і отримуєш результат вже під час перегляду.</p>
+          <p>Кожен урок - лайв-демо на екрані. Ти повторюєш за мною і отримуєш результат вже під час перегляду.</p>
         </div>
       </div>
       <div class="advantage">
@@ -670,7 +693,7 @@ p { margin-bottom: 12px; color: var(--ink-2); }
         <div class="advantage-icon">∞</div>
         <div class="advantage-text">
           <h3>Lifetime access</h3>
-          <p>Одна покупка — доступ назавжди. Матеріали оновлюються і поповнюються. Все безкоштовно.</p>
+          <p>Одна покупка - доступ назавжди. Матеріали оновлюються і поповнюються. Все безкоштовно.</p>
         </div>
       </div>
     </div>
@@ -687,8 +710,8 @@ p { margin-bottom: 12px; color: var(--ink-2); }
         <ul>
           <li>Отримуєш доступ до записів один раз</li>
           <li>Матеріали застарівають через місяці</li>
-          <li>В кращому випадку — збережені записи і PDF</li>
-          <li>Закінчив — і на цьому все</li>
+          <li>В кращому випадку - збережені записи і PDF</li>
+          <li>Закінчив - і на цьому все</li>
         </ul>
         <div class="compare-foot">
           <div class="compare-panel compare-panel--plain">
@@ -725,8 +748,8 @@ p { margin-bottom: 12px; color: var(--ink-2); }
         <canvas id="formatOrbCanvas"></canvas>
       </div>
       <div class="format-text">
-        <p>Практикум — це готові записані відеоуроки. Ти проходиш їх у своєму темпі, коли зручно. Кожен урок має супровідний текстовий матеріал з промптами, посиланнями та покроковими інструкціями.</p>
-        <p class="highlight">Якщо виникне питання — напиши мені напряму. Я відповідаю кожному особисто.</p>
+        <p>Практикум - це готові записані відеоуроки. Ти проходиш їх у своєму темпі, коли зручно. Кожен урок має супровідний текстовий матеріал з промптами, посиланнями та покроковими інструкціями.</p>
+        <p class="highlight">Якщо виникне питання - напиши мені напряму. Я відповідаю кожному особисто.</p>
       </div>
     </div>
   </div>
@@ -741,7 +764,7 @@ p { margin-bottom: 12px; color: var(--ink-2); }
         <div class="req-icon" style="background: rgba(0, 212, 255, 0.1);"><img src="Images/Claude_AI_logo.svg" alt="Claude" style="width:32px;height:32px;"></div>
         <h3>Claude Pro</h3>
         <div class="req-tag">Обов'язково</div>
-        <p>$20/міс — мінімальний тариф. Основний інструмент практикуму.</p>
+        <p>$20/міс - мінімальний тариф. Основний інструмент практикуму.</p>
       </div>
       <div class="req-card cursor-target">
         <div class="req-icon" style="background: rgba(99, 102, 241, 0.1);"><img src="Images/Figma-logo.svg" alt="Figma" style="width:28px;height:28px;"></div>
@@ -789,7 +812,7 @@ p { margin-bottom: 12px; color: var(--ink-2); }
       </div>
       <div class="lesson-list">
         <div class="lesson"><div class="lesson-num">1</div><div class="lesson-content"><h4>Створення бібліотеки кольорів</h4><p>Палітра кольорів через Claude + Figma MCP. Семантичні токени, dark mode.</p></div></div>
-        <div class="lesson"><div class="lesson-num">2</div><div class="lesson-content"><h4>Створення компонентів</h4><p>Кнопки, інпути, картки — бібліотека компонентів через AI. Варіанти, auto-layout.</p></div></div>
+        <div class="lesson"><div class="lesson-num">2</div><div class="lesson-content"><h4>Створення компонентів</h4><p>Кнопки, інпути, картки - бібліотека компонентів через AI. Варіанти, auto-layout.</p></div></div>
         <div class="lesson"><div class="lesson-num">3</div><div class="lesson-content"><h4>Створення дизайну (на стилях і компонентах)</h4><p>Повноцінний дизайн екрану з використанням створених стилів і компонентів.</p></div></div>
         <div class="lesson"><div class="lesson-num">4</div><div class="lesson-content"><h4>Перенесення дизайну з Figma в код</h4><p>3 способи: скриншот, Dev Mode, Figma MCP. Порівняння макету і результату.</p></div></div>
       </div>
@@ -799,7 +822,7 @@ p { margin-bottom: 12px; color: var(--ink-2); }
     <div class="reveal">
       <div class="block-header">
         <h3><span class="block-num">03</span> Воркфлоу</h3>
-        <p>Реальні робочі процеси — від швидких прототипів до повноцінного продукту.</p>
+        <p>Реальні робочі процеси - від швидких прототипів до повноцінного продукту.</p>
       </div>
       <div class="lesson-list">
         <div class="lesson"><div class="lesson-num">1</div><div class="lesson-content"><h4>Швидкі прототипи в Cowork</h4><p>Робочий прототип з анімаціями за 15 хвилин. Деплой на Vercel / GitHub Pages.</p></div></div>
@@ -809,7 +832,7 @@ p { margin-bottom: 12px; color: var(--ink-2); }
         <div class="lesson"><div class="lesson-num lesson-num--bonus">B</div><div class="lesson-content"><h4>Анімація <span class="tag-bonus">бонус</span></h4><p>Lottie- та Веб анімації через Claude.</p></div></div>
         <div class="lesson"><div class="lesson-num">4</div><div class="lesson-content"><h4>Від ідеї до працюючого продукту</h4><p>Повний цикл: дослідження → дизайн → код → деплой. Свій продукт, який можна продавати.</p></div></div>
         <div class="lesson" style="background: rgba(99,102,241,0.04);"><div class="lesson-num lesson-num--test">?</div><div class="lesson-content"><h4>Тестування</h4><p>Опитувальник для перевірки знань з усіх воркфлоу.</p></div></div>
-        <div class="lesson" style="background: rgba(234,179,8,0.04);"><div class="lesson-num lesson-num--hw">✎</div><div class="lesson-content"><h4>Домашнє завдання</h4><p>Практичне завдання — застосувати воркфлоу у своєму проєкті.</p></div></div>
+        <div class="lesson" style="background: rgba(234,179,8,0.04);"><div class="lesson-num lesson-num--hw">✎</div><div class="lesson-content"><h4>Домашнє завдання</h4><p>Практичне завдання - застосувати воркфлоу у своєму проєкті.</p></div></div>
       </div>
     </div>
 
@@ -854,30 +877,6 @@ p { margin-bottom: 12px; color: var(--ink-2); }
     <p class="subtext reveal" style="margin-top: 20px;">Ти побачиш, як я їх використовую в реальній роботі.</p>
   </div>
 </section>
-
-<!-- ═══════════════ ПРО АВТОРА ═══════════════ -->
-<section class="section">
-  <div class="container">
-    <h2 class="split-text reveal" data-split>Хто веде практикум</h2>
-    <div class="author reveal">
-      <div class="author-photo cursor-target"><img src="Images/photo.jpeg" alt="Дмитро" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>
-      <div class="author-info">
-        <h3>Дмитро</h3>
-        <div class="author-title">Senior Designer · 7+ років у продуктовому дизайні</div>
-        <p>Майже п'ять років працюю в американському фінтех-продукті, де виріс від дизайнера до лід-дизайнера. Паралельно — ukrzoloto.ua, одна з найбільших мереж ювелірних магазинів в Україні.</p>
-        <p>Більше року щодня використовую Claude, Figma AI та інші AI-інструменти. Дизайню у Figma з AI, роблю дизайн у коді — веб, десктоп, мобільні додатки.</p>
-        <p>Веду Telegram-канал для дизайнерів 6+ років. Майже тисяча підписників.</p>
-        <div class="author-links">
-          <a href="https://www.linkedin.com/in/dmytro-shain/" target="_blank" class="author-link cursor-target">LinkedIn</a>
-          <a href="https://www.instagram.com/shain_di/" target="_blank" class="author-link cursor-target">Instagram</a>
-          <a href="https://t.me/+sF22AC-NQ6wxMjU6" target="_blank" class="author-link cursor-target">Telegram-канал</a>
-          <a href="mailto:web.shain@gmail.com" class="author-link cursor-target">Email</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ═══════════════ ДЛЯ КОГО ═══════════════ -->
 <section class="section">
   <div class="container">
@@ -897,7 +896,7 @@ p { margin-bottom: 12px; color: var(--ink-2); }
         <ul>
           <li>Тим, хто шукає теорію промптингу без практики</li>
           <li>Тим, хто хоче навчитись програмувати (це не курс програмування)</li>
-          <li>Тим, хто очікує «магічну кнопку» — потрібно буде повторювати і практикуватись</li>
+          <li>Тим, хто очікує «магічну кнопку» - потрібно буде повторювати і практикуватись</li>
         </ul>
       </div>
     </div>
@@ -909,16 +908,35 @@ p { margin-bottom: 12px; color: var(--ink-2); }
   <div class="container">
     <h2 class="text-center split-text reveal" data-split>Перші відгуки</h2>
     <div class="reviews-bento reveal">
-      <!-- 1. Hero — Claude/ChatGPT -->
+      <!-- 1. Featured - Артем Т. (кейс: знайшов роботу) -->
       <div class="review-card is-hero">
         <p class="review-quote">
-          Привіт! Дякую за курс — мені дуже зайшов 👍<br><br>
-          За тиждень реально багато нового для себе взяв. Почав активно юзати Claude, до цього більше сидів на ChatGPT. Зараз взагалі працюю в зв'язці: ChatGPT для обговорення і промптів, а Claude — для генерації та реалізації, і це прям кайф.
+          Як мені допоміг курс Діми знайти роботу.<br><br>
+          Попри інфоциганський присмак у назві, факт залишається фактом. Тому почнемо, як і в курсі, з точки старту, моєї ролі та контексту.<br><br>
+          Працюював над проектами Укрзолото та Злато.юа, такі собі ювелірні гіганти на ринку України. Були рутинні і цікаві задачі, як і у всіх. Так як це була парт тайм робота, навантаження було не постійним і я мав можливість по трохи вивчати LLM та якраз на невеличкому пет проєкті тестував Figma MCP та figmosha, коли про них було чути прям звідусіль.<br><br>
+          Якраз з виходом курсу мені написали в лінкедін з пропозицією роботи. Компанія не є відомою на ринку України, тому вирішив сходити на першу співбесіду поглянути на ринок. Вів доволі пасивний пошук роботи ще з минулої осені. Назначили інтервʼю на кінець тижня, де мені стало цікаво виконати тестове завдання.<br><br>
+          <strong>Задача</strong><br>
+          Потрібно було зробити, на перший погля, 1 простенький флоу з максимальним використанням AI інструментів. До цього моменту я встиг переглянути перші 2 блоки курсу. По суті, я не дізнався з курсу прям щось супер нове, але я значно покращив розуміння базових принципів роботи та побудову промптів, удосконалив свій воркфлоу завдяки попереднім двом пунктам. Таким чином вдалось структурувати всі клаптики знань, що мав, в щось більш цілісне.<br><br>
+          Після початку виконання тестового ми з клодом виявили, що флоу не один, а біля 5-6, тому за зазначений час на виконання завдання я зробив 2, і вказав в тестовому інші, які я б зробив, якби мав більше часу. В цей час для економії токенів я спробував новий для себе підхід.<br><br>
+          Я згодував клоду тестове, далі ми створили з ним стилі кольорів і текстів (які клод успішно потягнув з сайту компанії), після цього я попросив створити план для виконання задачі, типу розбити флоу на потрібні сторінки. І тут, замість фактичного створення сторінок, я запитав, які базові компоненти потрібні для створення першої сторінки з флоу. Він перерахував, я доповнив і через пів години-годину... спалив всі токени 😂 Ні, ну а що ми очікували від підписки за 20$<br><br>
+          Та я отримав частину базових компонентів, чіткий план, що клоду робити далі, і можливість, поки оновлювались ліміти, поправити все, що хотів, руками. Таких ітерацій далі було декілько, але в результаті я встиг все закінчити до дедлейну, хоч і не без пригод, але то вже інша історія.<br><br>
+          Далі технічне інтервʼю і оффер.<br><br>
+          <strong>Результат</strong><br>
+          До чого тут курс? Все просто - він допоміг зробити все простіше, швидше і якісніше. Однією з критичних вимог до тестового, та і взагалі, вакансії - використання AI інструментів і створення дизайну за допомогою AІ. Тобто без впорядкування моїх знань, я б сильно довше виконував саме тестове, результат би був не настільки пропрацьованим і якісним. Чи вплинуло б це на щось? - не знаю, я ж не ворожка 😅 Можливо я б і так зміг отримати цей офер, але тестове здалось сильно легшим ніж інші, які я виконував. Тому дякую <a href="https://t.me/d_shain" target="_blank" class="cursor-target">@d_shain</a> за курс і з нетерпінням очікую нових.
         </p>
-        <span class="review-meta">— Учасник практикуму</span>
+        <span class="review-meta">- Артем Т.</span>
       </div>
 
-      <!-- 2. Mark — кейс з обрізаним посиланням -->
+      <!-- 2. Учасник - Claude/ChatGPT (перенесено з featured) -->
+      <div class="review-card is-narrow">
+        <p class="review-quote">
+          Привіт! Дякую за курс - мені дуже зайшов 👍<br><br>
+          За тиждень реально багато нового для себе взяв. Почав активно юзати Claude, до цього більше сидів на ChatGPT. Зараз взагалі працюю в зв’язці: ChatGPT для обговорення і промптів, а Claude - для генерації та реалізації, і це прям кайф.
+        </p>
+        <span class="review-meta">- Учасник практикуму</span>
+      </div>
+
+      <!-- 3. Mark - кейс з обрізаним посиланням -->
       <div class="review-card is-narrow">
         <p class="review-quote">
           Привіт, трохи для контексту: я джун, щойно закінчив курси. Сьогодні робив перенесення дизайну в код. Ось що в мене вийшло:
@@ -926,31 +944,31 @@ p { margin-bottom: 12px; color: var(--ink-2); }
         <span class="review-link-disabled">🔗 markuxuiport...</span>
       </div>
 
-      <!-- 3. Two formats (з матюком) -->
+      <!-- 4. Two formats -->
       <div class="review-card is-narrow">
         <p class="review-quote">
           Я проходжу одразу два курси, і це взагалі різні формати. Діма дуже ах**нно пояснює як все підключити і як налаштувати простори, систему якось зробити.
         </p>
       </div>
 
-      <!-- 4. Presence + persona (combined 3+4) -->
+      <!-- 5. Presence + persona -->
       <div class="review-card is-wide-4">
         <p class="review-quote">
-          Дуже класно, коли є оце відчуття присутності навіть у записах. Якась така персональна фішка — ще ніби ближче знайомить студента з тобою, бо ти показуєш якийсь власний вибір поза темою.
+          Дуже класно, коли є оце відчуття присутності навіть у записах. Якась така персональна фішка - ще ніби ближче знайомить студента з тобою, бо ти показуєш якийсь власний вибір поза темою.
         </p>
       </div>
 
-      <!-- 5. Edge cases -->
+      <!-- 6. Edge cases -->
       <div class="review-card is-wide-2">
         <p class="review-quote">
           Дякую, що все по порядку, структурно і з едж-кейсами. Є відчуття, ніби я не сам на сам з цим всім.
         </p>
       </div>
 
-      <!-- 6. "Курс топ" -->
+      <!-- 7. "Курс топ" -->
       <div class="review-card is-full">
         <p class="review-quote">
-          Курс топ. Все дуже чітко й зрозуміло. Без води — найголовніше. Чекаю на інші курси. Так тримати 👏
+          Курс топ. Все дуже чітко й зрозуміло. Без води - найголовніше. Чекаю на інші курси. Так тримати 👏
         </p>
       </div>
     </div>
@@ -992,27 +1010,27 @@ p { margin-bottom: 12px; color: var(--ink-2); }
     <div class="reveal">
       <div class="faq-item open">
         <div class="faq-q">Мені потрібно вміти програмувати?</div>
-        <div class="faq-a">Ні. Практикум побудований для дизайнерів без досвіду в програмуванні. AI пише код за тебе — ти керуєш процесом.</div>
+        <div class="faq-a">Ні. Практикум побудований для дизайнерів без досвіду в програмуванні. AI пише код за тебе - ти керуєш процесом.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">Які підписки мені потрібні?</div>
-        <div class="faq-a">Claude Pro ($20/міс) — основний інструмент. Figma — безкоштовний план достатній для початку. Все інше — опційне.</div>
+        <div class="faq-a">Claude Pro ($20/міс) - основний інструмент. Figma - безкоштовний план достатній для початку. Все інше - опційне.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">Це на якій мові?</div>
-        <div class="faq-a">Відео і всі матеріали — українською.</div>
+        <div class="faq-a">Відео і всі матеріали - українською.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">Це живі уроки чи записані?</div>
-        <div class="faq-a">Записані відеоуроки. Ти проходиш у своєму темпі, коли зручно. Якщо виникне питання — напиши мені напряму, я відповідаю особисто.</div>
+        <div class="faq-a">Записані відеоуроки. Ти проходиш у своєму темпі, коли зручно. Якщо виникне питання - напиши мені напряму, я відповідаю особисто.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">Як довго буде доступ?</div>
-        <div class="faq-a">Назавжди. Одна покупка — lifetime access. Включаючи всі майбутні оновлення і нові уроки.</div>
+        <div class="faq-a">Назавжди. Одна покупка - lifetime access. Включаючи всі майбутні оновлення і нові уроки.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">А якщо інструменти зміняться?</div>
-        <div class="faq-a">Саме тому lifetime access. Коли Claude чи Figma оновлюються — я оновлюю матеріали і додаю нові. В планах — робота з Codex від OpenAI, ChatGPT + Figma та інші воркфлоу.</div>
+        <div class="faq-a">Саме тому lifetime access. Коли Claude чи Figma оновлюються - я оновлюю матеріали і додаю нові. В планах - робота з Codex від OpenAI, ChatGPT + Figma та інші воркфлоу.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">Скільки часу потрібно на проходження?</div>
@@ -1031,7 +1049,7 @@ p { margin-bottom: 12px; color: var(--ink-2); }
   <div class="container">
     <h2 class="split-text reveal" data-split>Почни використовувати AI у своїй роботі вже сьогодні</h2>
     <p class="reveal">Від налаштування інструментів до власного продукту. Воркфлоу, які ти зможеш забрати собі і почати використовувати вже після першого відео.</p>
-    <a href="https://payhip.com/buy?link=efnEH" target="_blank" class="cta cursor-target reveal">Отримати доступ — $49</a>
+    <a href="https://payhip.com/buy?link=efnEH" target="_blank" class="cta cursor-target reveal">Отримати доступ - $49</a>
     <p class="subtext reveal" style="margin-top: 12px;">Lifetime access · Доступ одразу після оплати</p>
   </div>
 </section>
@@ -1049,7 +1067,7 @@ p { margin-bottom: 12px; color: var(--ink-2); }
 <!-- ═══════════════ SCRIPTS ═══════════════ -->
 <script>
 // ════════════════════════════════════════════════════════
-// 1. SPLIT TEXT — Scroll-triggered character reveal
+// 1. SPLIT TEXT - Scroll-triggered character reveal
 // ════════════════════════════════════════════════════════
 (function initSplitText() {
   document.querySelectorAll('[data-split]').forEach(function(el) {
@@ -1108,7 +1126,7 @@ p { margin-bottom: 12px; color: var(--ink-2); }
 
 
 // ════════════════════════════════════════════════════════
-// 2. SCROLL REVEAL — Fade-in sections
+// 2. SCROLL REVEAL - Fade-in sections
 // ════════════════════════════════════════════════════════
 (function initScrollReveal() {
   const observer = new IntersectionObserver(function(entries) {
@@ -1141,7 +1159,7 @@ p { margin-bottom: 12px; color: var(--ink-2); }
 
 
 // ════════════════════════════════════════════════════════
-// 4. CTA TRACKING — Payhip buy button click events
+// 4. CTA TRACKING - Payhip buy button click events
 // ════════════════════════════════════════════════════════
 (function initCtaTracking() {
   var buyButtons = document.querySelectorAll('a[href*="payhip.com"]');
@@ -1174,7 +1192,7 @@ p { margin-bottom: 12px; color: var(--ink-2); }
 
 
 // ════════════════════════════════════════════════════════
-// 5. FORMAT ORB — animated dot-sphere ("Як це працює")
+// 5. FORMAT ORB - animated dot-sphere ("Як це працює")
 //    Plain Canvas 2D, light-theme palette. Pauses off-screen.
 // ════════════════════════════════════════════════════════
 (function initFormatOrb() {
