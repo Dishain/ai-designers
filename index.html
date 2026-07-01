@@ -189,19 +189,36 @@ p { margin-bottom: 12px; color: var(--ink-2); }
 
 /* ═══════════════ HERO ═══════════════ */
 .hero {
-  min-height: 88vh; display: flex; align-items: center; justify-content: center;
-  position: relative; overflow: hidden; text-align: center;
+  min-height: 88vh; display: flex; align-items: center;
+  position: relative; overflow: hidden;
 }
 .hero::before {
-  content: ''; position: absolute; top: -12%; left: 50%; transform: translateX(-50%);
-  width: 760px; height: 760px; border-radius: 50%;
+  content: ''; position: absolute; top: -14%; right: 2%; left: auto; transform: none;
+  width: 680px; height: 680px; border-radius: 50%;
   background: radial-gradient(circle, rgba(42, 133, 255, 0.10), transparent 65%);
   pointer-events: none;
 }
-.hero-content { position: relative; z-index: 2; max-width: 720px; padding: 0 24px; }
-.hero-content h1 { margin-bottom: 20px; }
-.hero-content p { font-size: 17px; color: var(--ink-2); max-width: 560px; margin: 0 auto 28px; line-height: 1.6; }
-.hero-content .cta { margin-bottom: 12px; }
+.hero-inner {
+  position: relative; z-index: 2; width: 100%;
+  display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center;
+}
+.hero-text { text-align: left; }
+.hero-text h1 { margin-bottom: 20px; }
+.hero-text p { font-size: 17px; color: var(--ink-2); max-width: 520px; margin: 0 0 28px; line-height: 1.6; }
+.hero-text .cta { margin-bottom: 12px; }
+.hero-text .badges { justify-content: flex-start; }
+.hero-media { position: relative; }
+.hero-media img {
+  display: block; width: 100%; max-width: 460px; height: auto; margin-left: auto;
+}
+@media (max-width: 900px) {
+  .hero { min-height: 0; padding: 64px 0 32px; }
+  .hero-inner { grid-template-columns: 1fr; gap: 36px; }
+  .hero-text { text-align: center; }
+  .hero-text p { margin-left: auto; margin-right: auto; }
+  .hero-text .badges { justify-content: center; }
+  .hero-media img { margin: 0 auto; max-width: 320px; }
+}
 
 /* Split text animation (gentle) */
 .split-text .char { display: inline-block; opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
@@ -575,16 +592,24 @@ p { margin-bottom: 12px; color: var(--ink-2); }
 
 <!-- ═══════════════ HERO ═══════════════ -->
 <section class="hero">
-  <div class="hero-content">
-    <div class="label">Практикум для дизайнерів</div>
-    <h1 class="split-text" data-split>Навчись<br>використовувати AI<br>у щоденній роботі<br>дизайнера</h1>
-    <p>Реальні воркфлоу, які я використовую на основній роботі.<br>Від налаштування інструментів до свого продукту — без навичок програмування.</p>
-    <a href="https://payhip.com/buy?link=efnEH" target="_blank" class="cta cursor-target">Отримати доступ — $49</a>
-    <p class="subtext">Доступ до матеріалів та всіх оновлень — назавжди.</p>
-    <div class="badges">
-      <span class="badge">Записані відеоуроки</span>
-      <span class="badge">4+ години практики</span>
-      <span class="badge">Lifetime updates</span>
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <div class="label">Практикум для дизайнерів</div>
+      <h1 class="split-text" data-split>Навчись використовувати AI у щоденній роботі дизайнера</h1>
+      <p>Реальні воркфлоу, які я використовую на основній роботі. Від налаштування інструментів до свого продукту — без навичок програмування.</p>
+      <a href="https://payhip.com/buy?link=efnEH" target="_blank" class="cta cursor-target">Отримати доступ — $49</a>
+      <p class="subtext">Доступ до матеріалів та всіх оновлень — назавжди.</p>
+      <div class="badges">
+        <span class="badge">Записані відеоуроки</span>
+        <span class="badge">4+ години практики</span>
+        <span class="badge">Lifetime updates</span>
+      </div>
+    </div>
+    <div class="hero-media">
+      <picture>
+        <source srcset="Images/hero.webp" type="image/webp" />
+        <img src="Images/hero.png" alt="Рука тримає AI-інструменти дизайнера: Figma, Claude AI, Gemini AI, ChatGPT" />
+      </picture>
     </div>
   </div>
 </section>
