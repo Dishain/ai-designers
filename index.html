@@ -245,27 +245,49 @@ p { margin-bottom: 12px; color: var(--ink-2); }
 .compare-dim h3 { color: var(--muted); }
 .compare-dim li { color: var(--ink-2); }
 .compare-dim li::before { content: "✕"; color: var(--faint); font-weight: 600; }
-/* Highlighted card — this practicum: raised, green ✓ markers */
-.compare-hl { box-shadow: var(--sh-lg); }
+/* Highlighted card — this practicum: raised, green ✓ markers.
+   The gradient lives on the CARD's bottom-right corner (a glowing ring +
+   a soft inner bloom). The footer block sits inside as a plain white panel,
+   leaving a small gap through which the card's corner gradient shows. */
+.compare-hl { box-shadow: var(--sh-lg); position: relative; }
 .compare-hl li::before { content: "✓"; color: var(--green); }
-
-/* Footer action panel at the bottom of each card */
-.compare-foot { margin-top: 28px; }
-.compare-panel { border-radius: 16px; padding: 18px; }
-.compare-panel--plain { background: var(--surface-2); }
-.compare-panel--grad { position: relative; background: var(--surface); }
-.compare-panel--grad::before {
-  content: ""; position: absolute; inset: 0; border-radius: 16px; padding: 1.5px;
-  background: linear-gradient(120deg,
-    rgba(122, 150, 255, 0.9),
-    rgba(255, 193, 120, 0.9),
-    rgba(255, 138, 158, 0.9),
-    rgba(124, 92, 255, 0.9));
+/* Gradient ring — vivid at the bottom-right corner, fading out elsewhere */
+.compare-hl::before {
+  content: ""; position: absolute; inset: 0; border-radius: 24px; padding: 2px;
+  background: radial-gradient(150% 150% at 100% 100%,
+    rgba(124, 92, 255, 1) 0%,
+    rgba(226, 104, 178, 0.96) 13%,
+    rgba(255, 145, 140, 0.9) 25%,
+    rgba(255, 196, 120, 0.82) 37%,
+    transparent 55%);
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
           mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
           mask-composite: exclude;
-  pointer-events: none;
+  pointer-events: none; z-index: 2;
+}
+/* Soft inner bloom hugging the corner (shows in the gap around the panel) */
+.compare-hl::after {
+  content: ""; position: absolute; inset: 0; border-radius: 24px;
+  background: radial-gradient(42% 40% at 100% 100%,
+    rgba(168, 92, 224, 0.30),
+    rgba(255, 150, 140, 0.20) 45%,
+    transparent 72%);
+  pointer-events: none; z-index: 0;
+}
+.compare-hl > * { position: relative; z-index: 1; }
+
+/* Footer action panel — pulled toward the card edges so only a small (~8px)
+   gap remains, through which the highlighted card's corner gradient shows */
+.compare-foot { margin: 28px -24px -28px; }
+.compare-panel { border-radius: 16px; padding: 18px; }
+.compare-panel--plain { background: var(--surface-2); }
+/* Plain white block with a thin contour — sits inset so the card's
+   corner gradient peeks out in the ~gap around it */
+.compare-panel--grad {
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  box-shadow: var(--sh-sm);
 }
 .compare-cap { font-size: 12px; color: var(--muted); text-align: center; margin-bottom: 12px; }
 .compare-btn {
