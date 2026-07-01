@@ -218,31 +218,69 @@ p { margin-bottom: 12px; color: var(--ink-2); }
 .advantage-text h3 { font-size: 16px; margin-bottom: 4px; }
 .advantage-text p { font-size: 14px; margin: 0; color: var(--ink-2); }
 
-/* ═══════════════ COMPARISON ═══════════════ */
-.compare { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
-@media (max-width: 640px) { .compare { grid-template-columns: 1fr; } }
-.compare-col { background: var(--surface); border: 1px solid var(--hairline); border-radius: 20px; padding: 28px; box-shadow: var(--sh-sm); }
-.compare-col h3 { font-size: 16px; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--hairline); }
-.compare-col ul { list-style: none; }
-.compare-col li { font-size: 14px; color: var(--ink-2); padding: 10px 0; padding-left: 28px; position: relative; line-height: 1.5; }
-.compare-col li + li { border-top: 1px solid var(--hairline); }
-.compare-col li::before { position: absolute; left: 0; font-size: 14px; }
-.compare-dim li::before { content: "—"; color: var(--faint); }
-
-/* Highlighted card (replaces the old electric border) */
-.compare-highlight { background: transparent; border: none; padding: 0; box-shadow: none; }
-.electric-border-wrap {
-  position: relative; border-radius: 22px; padding: 1.5px;
-  background: linear-gradient(180deg, var(--accent), rgba(42, 133, 255, 0.35));
-  box-shadow: var(--sh-md);
+/* ═══════════════ COMPARISON — plan-card style ═══════════════ */
+.compare { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; align-items: stretch; }
+@media (max-width: 768px) { .compare { grid-template-columns: 1fr; } }
+.compare-col {
+  display: flex; flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: 24px;
+  padding: 36px 32px;
+  box-shadow: var(--sh-sm);
 }
-.electric-inner { background: var(--surface); border-radius: 20.5px; padding: 28px; }
-.electric-inner li::before, .pricing-list li::before { content: "✓"; color: var(--accent); position: absolute; left: 0; font-weight: 600; }
-.pricing-list li { font-size: 14px; padding: 11px 0; padding-left: 28px; position: relative; border-bottom: 1px solid var(--hairline); color: var(--ink-2); }
-.pricing-list li:last-child { border-bottom: none; }
-.compare-col .electric-inner li { border-bottom: 1px solid var(--hairline); }
-.compare-col .electric-inner li:last-child { border-bottom: none; }
-.compare-col .electric-inner li::before { color: var(--green); }
+.compare-col h3 { font-size: 26px; font-weight: 700; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 24px; }
+.compare-col ul { list-style: none; flex: 1; }
+.compare-col li {
+  font-size: 15px; color: var(--ink); line-height: 1.45;
+  padding: 12px 0; padding-left: 32px; position: relative;
+}
+.compare-col li::before {
+  position: absolute; left: 0; top: 11px;
+  width: 18px; text-align: center;
+  font-size: 15px; font-weight: 700;
+}
+/* Dim card — "other courses": muted, grey ✕ markers, low elevation */
+.compare-dim { box-shadow: none; }
+.compare-dim h3 { color: var(--muted); }
+.compare-dim li { color: var(--ink-2); }
+.compare-dim li::before { content: "✕"; color: var(--faint); font-weight: 600; }
+/* Highlighted card — this practicum: raised, green ✓ markers */
+.compare-hl { box-shadow: var(--sh-lg); }
+.compare-hl li::before { content: "✓"; color: var(--green); }
+
+/* Footer action panel at the bottom of each card */
+.compare-foot { margin-top: 28px; }
+.compare-panel { border-radius: 16px; padding: 18px; }
+.compare-panel--plain { background: var(--surface-2); }
+.compare-panel--grad { position: relative; background: var(--surface); }
+.compare-panel--grad::before {
+  content: ""; position: absolute; inset: 0; border-radius: 16px; padding: 1.5px;
+  background: linear-gradient(120deg,
+    rgba(122, 150, 255, 0.9),
+    rgba(255, 193, 120, 0.9),
+    rgba(255, 138, 158, 0.9),
+    rgba(124, 92, 255, 0.9));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+          mask-composite: exclude;
+  pointer-events: none;
+}
+.compare-cap { font-size: 12px; color: var(--muted); text-align: center; margin-bottom: 12px; }
+.compare-btn {
+  display: flex; align-items: center; justify-content: center;
+  width: 100%; height: 52px; border-radius: 14px;
+  font-size: 15px; font-weight: 600; text-decoration: none;
+}
+.compare-btn--disabled { background: var(--surface); color: var(--faint); border: 1px solid var(--hairline); cursor: default; }
+.compare-btn--primary {
+  background: #0A0A0A; color: #FAFAF8;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+  transition: transform 0.2s cubic-bezier(.2,.7,.2,1), box-shadow 0.2s cubic-bezier(.2,.7,.2,1);
+}
+.compare-btn--primary:hover { transform: translateY(-1px); box-shadow: 0 14px 32px rgba(0, 0, 0, 0.26); }
+.compare-btn--primary:active { transform: scale(0.99); }
 
 /* ═══════════════ FORMAT ═══════════════ */
 .format-row { display: flex; gap: 32px; margin-top: 24px; align-items: center; }
@@ -595,17 +633,25 @@ p { margin-bottom: 12px; color: var(--ink-2); }
           <li>В кращому випадку — збережені записи і PDF</li>
           <li>Закінчив — і на цьому все</li>
         </ul>
+        <div class="compare-foot">
+          <div class="compare-panel compare-panel--plain">
+            <div class="compare-cap">Типовий формат</div>
+            <div class="compare-btn compare-btn--disabled">Разовий доступ</div>
+          </div>
+        </div>
       </div>
-      <div class="compare-col compare-highlight">
-        <div class="electric-border-wrap">
-          <div class="electric-inner">
-            <h3>AI for Designers</h3>
-            <ul>
-              <li>Lifetime access до всіх матеріалів</li>
-              <li>Матеріали оновлюються разом з інструментами</li>
-              <li>Нові уроки додаються безкоштовно</li>
-              <li>В планах: Codex від OpenAI, ChatGPT + Figma, нові воркфлоу</li>
-            </ul>
+      <div class="compare-col compare-hl">
+        <h3>AI for Designers</h3>
+        <ul>
+          <li>Lifetime access до всіх матеріалів</li>
+          <li>Матеріали оновлюються разом з інструментами</li>
+          <li>Нові уроки додаються безкоштовно</li>
+          <li>В планах: Codex від OpenAI, ChatGPT + Figma, нові воркфлоу</li>
+        </ul>
+        <div class="compare-foot">
+          <div class="compare-panel compare-panel--grad">
+            <div class="compare-cap">Lifetime access · всі оновлення включено</div>
+            <a href="https://payhip.com/buy?link=efnEH" target="_blank" class="compare-btn compare-btn--primary cursor-target">Отримати доступ</a>
           </div>
         </div>
       </div>
