@@ -1,0 +1,25 @@
+# AI for Designers
+
+> Практичний онлайн-практикум з AI-інструментів для UI/UX та продуктових дизайнерів. Реальні воркфлоу від Senior Designer, а не теорія. Lifetime access за $49.
+
+Практикум навчає дизайнерів застосовувати AI у щоденній роботі: швидке прототипування, дизайн у коді, робота з Figma через AI, компонентна робота. 15+ відеоуроків, 4+ години практики, 13+ інструментів. Контент українською мовою.
+
+## Основне
+- [Головна сторінка практикуму](https://dishain.github.io/ai-designers/): опис, програма, відгуки, ціна
+- [Купити практикум (Payhip, $49, lifetime access)](https://payhip.com/buy?link=efnEH)
+- [Політика конфіденційності](https://dishain.github.io/ai-designers/privacy.html)
+
+## Автор
+- Дмитро Легков — Senior Designer, 7+ років у продуктовому дизайні, 1+ рік активного використання AI у дизайн-процесах.
+- [LinkedIn](https://www.linkedin.com/in/dmytro-shain/)
+- [Instagram](https://www.instagram.com/shain_di/)
+- [Telegram](https://t.me/+sF22AC-NQ6wxMjU6)
+
+## Що всередині
+- 15+ відеоуроків у 3 блоках: Foundation, Workflows, Integration
+- 6 реальних воркфлоу: швидке прототипування за 15 хв, дизайн у коді без Figma, нова секція в наявному застосунку, стилізація коду, дизайн-правки у Figma через AI, компонентна робота у Figma через AI
+- 13+ AI-інструментів: Claude, Claude Code, Cursor, ChatGPT, Figma AI, Figma MCP, Gemini, Perplexity, Grok та інші
+
+## Для кого
+- UI/UX та продуктові дизайнери, які хочуть системно впровадити AI у робочий процес
+- Дизайнери, від яких у вакансіях вимагають досвід роботи з AI
