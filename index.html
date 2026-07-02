@@ -405,10 +405,10 @@ p { margin-bottom: 12px; color: var(--ink-2); }
 .review-card .review-quote a:hover { text-decoration: underline; }
 /* Featured review row: white card (left) + stacked side tiles (right).
    Side column defines the height; the featured matches it and scrolls. */
-.reviews-top { display: flex; gap: 16px; align-items: stretch; margin-top: 32px; }
-.reviews-side { flex: 0 0 34%; display: flex; flex-direction: column; gap: 16px; }
+.reviews-top { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; align-items: stretch; margin-top: 32px; }
+.reviews-side { grid-column: span 2; display: flex; flex-direction: column; gap: 16px; }
 .review-card.is-hero {
-  flex: 1 1 auto; padding: 0;
+  grid-column: span 4; padding: 0;
   background: var(--surface); border: 1px solid var(--hairline);
   box-shadow: var(--sh-lg); position: relative; min-height: 0; overflow: visible;
 }
@@ -440,6 +440,22 @@ p { margin-bottom: 12px; color: var(--ink-2); }
   overflow-y: auto; padding: 32px;
   display: flex; flex-direction: column; gap: 12px;
   border-radius: 20px;
+  /* Firefox: thin overlay scrollbar, no visible track */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(28, 28, 30, 0.18) transparent;
+}
+/* WebKit/Blink: slim rounded thumb, transparent track, inset from the rounded corners */
+.review-card.is-hero .review-hero-scroll::-webkit-scrollbar { width: 10px; }
+.review-card.is-hero .review-hero-scroll::-webkit-scrollbar-track { background: transparent; }
+.review-card.is-hero .review-hero-scroll::-webkit-scrollbar-thumb {
+  background: rgba(28, 28, 30, 0.18);
+  border-radius: 999px;
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+.review-card.is-hero .review-hero-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(28, 28, 30, 0.32);
+  background-clip: padding-box;
 }
 .review-card.is-hero .review-quote { font-size: 15px; color: var(--ink); line-height: 1.6; }
 .review-card.is-wide-4 { grid-column: span 4; }
@@ -450,8 +466,8 @@ p { margin-bottom: 12px; color: var(--ink-2); }
 @media (max-width: 768px) {
   .reviews-bento { grid-template-columns: 1fr; }
   .review-card.is-wide-4, .review-card.is-wide-2, .review-card.is-full { grid-column: span 1; grid-row: auto; }
-  .reviews-top { flex-direction: column; }
-  .reviews-side { flex: 1 1 auto; }
+  .reviews-top { grid-template-columns: 1fr; }
+  .review-card.is-hero, .reviews-side { grid-column: span 1; }
   .review-card.is-hero { padding: 24px; }
   .review-card.is-hero .review-hero-scroll { position: static; inset: auto; padding: 0; overflow: visible; }
 }
